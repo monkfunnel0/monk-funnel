@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { WhatsAppIcon } from "../icons/BrandIcons";
 import ScaledDashboard from "../widgets/ScaledDashboard";
 import DashboardMockup from "../widgets/DashboardMockup";
 
@@ -20,64 +20,63 @@ export default function Hero() {
       {/* Hero content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4">
         {/* Badge */}
-        <div
+        {/* <div
           className="animate-fade-down mb-4 inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md ring-1 ring-gray-200 px-4 py-1.5"
         >
           <span className="text-[11px] tracking-widest text-gray-500 uppercase">Conversion-First Websites · Shipped in 21 days</span>
-        </div>
+        </div> */}
 
         {/* Headline */}
-        <h1 className="text-gray-900 font-normal leading-[1.05] tracking-tight text-[40px] min-[400px]:text-[44px] sm:text-6xl lg:text-7xl xl:text-[80px]">
+        <h1 className="font-serif font-medium text-[#1e180f] leading-[1.02] tracking-tight text-[44px] min-[400px]:text-[50px] sm:text-[68px] lg:text-[80px] xl:text-[92px]">
           <span className="block animate-fade-up">Your website should be</span>
           <span
             className="block animate-fade-up"
             style={{ animationDelay: "100ms" }}
           >
-            your best salesperson.
+            your <em>best salesperson.</em>
           </span>
         </h1>
 
         {/* Description */}
         <p
-          className="animate-fade-up mt-4 sm:mt-5 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg"
+          className="animate-fade-up mt-5 sm:mt-6 text-[#3f382e] text-[15px] sm:text-base lg:text-[17px] leading-relaxed max-w-lg"
           style={{ animationDelay: "220ms" }}
         >
           Most startup sites explain the product. We build the one that sells the decision —
-          rebuilt around one outcome, one message, one action, and shipped in 21 days.
+          one outcome, one message, one action. Shipped in 21 days.
         </p>
 
         {/* CTA buttons */}
         <div
-          className="animate-fade-up mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-4"
+          className="animate-fade-up mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-3"
           style={{ animationDelay: "340ms" }}
         >
           <a
             href="/contact"
-            style={{
-              background: "#1e180f",
-              color: "#fff",
-              fontSize: "14px",
-              fontWeight: 500,
-              padding: "10px 24px",
-              borderRadius: "999px",
-              display: "inline-block",
-            }}
+            className="group inline-flex items-center gap-2.5 rounded-full bg-[#1e180f] pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
-            Get a free homepage teardown
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
+              <Image
+                src="/3840px-Google_Meet_icon_(2020).svg.webp"
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]"
+              />
+            </span>
+            Book Intro Call
           </a>
-          <Link
-            href="/#services"
-            style={{
-              color: "#374151",
-              fontSize: "14px",
-              fontWeight: 400,
-              display: "inline-block",
-              textDecoration: "underline",
-              textUnderlineOffset: "3px",
-            }}
+          <a
+            href="https://wa.me/918810326598"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-[#1e180f] border border-[#e6dfd5]"
           >
-            See how it works
-          </Link>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center">
+              <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]" />
+            </span>
+            Send Message
+          </a>
         </div>
       </div>
 

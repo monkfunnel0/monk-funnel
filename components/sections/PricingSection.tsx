@@ -1,6 +1,6 @@
 "use client";
 
-const SERIF = "'Cormorant Garamond', Georgia, serif";
+const SERIF = "var(--font-serif)";
 const BORDER = "#e8e2da";
 
 type Feature = { text: string; ok: boolean };
@@ -120,12 +120,17 @@ export default function PricingSection() {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2
-            className="font-normal leading-tight mb-4"
-            style={{ fontSize: "clamp(32px, 5vw, 58px)", color: "#1e180f" }}
+          <p
+            className="text-[11px] tracking-[0.22em] uppercase mb-4"
+            style={{ color: "#9a8c7e" }}
           >
-            <span style={{ color: "#9a8c7e" }}>Start with the website. </span>
-            <span style={{ fontFamily: SERIF }}>Scale from there.</span>
+            Pricing
+          </p>
+          <h2
+            className="font-serif font-medium leading-[1.08] tracking-tight mb-4"
+            style={{ fontSize: "clamp(38px, 4.5vw, 56px)", color: "#1e180f" }}
+          >
+            Start with the website. <em>Scale from there.</em>
           </h2>
           <p
             className="text-[15px] max-w-md mx-auto"

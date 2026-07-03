@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const SERIF  = "'Cormorant Garamond', Georgia, serif";
+const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
 
 const services = [

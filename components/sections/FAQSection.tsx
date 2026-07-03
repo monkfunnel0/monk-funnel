@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const SERIF  = "'Cormorant Garamond', Georgia, serif";
+const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
 
 const faqs = [
@@ -48,15 +48,20 @@ export default function FAQSection() {
       <div className="max-w-3xl mx-auto">
 
         {/* Heading */}
+        <p
+          className="text-center text-[11px] tracking-[0.22em] uppercase mb-4"
+          style={{ color: "#9a8c7e" }}
+        >
+          FAQ
+        </p>
         <h2
-          className="text-center font-normal leading-tight mb-16"
+          className="text-center font-serif font-medium leading-[1.08] tracking-tight mb-16"
           style={{
-            fontFamily: SERIF,
-            fontSize: "clamp(36px, 5vw, 60px)",
+            fontSize: "clamp(38px, 4.5vw, 56px)",
             color: "#1e180f",
           }}
         >
-          Frequently asked questions
+          Frequently asked <em>questions</em>
         </h2>
 
         {/* Accordion */}
@@ -110,12 +115,8 @@ export default function FAQSection() {
                 >
                   <div style={{ overflow: "hidden" }}>
                     <p
-                      className="pb-6 text-[14px] leading-relaxed"
-                      style={{
-                        fontFamily: SERIF,
-                        fontStyle: "italic",
-                        color: "#7a6a58",
-                      }}
+                      className="pb-6 text-[14px] leading-relaxed max-w-xl"
+                      style={{ color: "#5f5346" }}
                     >
                       {faq.a}
                     </p>

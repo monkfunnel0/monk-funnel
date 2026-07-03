@@ -1,102 +1,95 @@
+const INK = "#1e180f";
+const BODY = "#5f5346";
+const MUTED = "#9a8c7e";
+const BORDER = "#e6dfd5";
+
 const steps = [
   {
     num: "01",
     title: "Discover",
     body: "Before we design anything, we find the one outcome this site has to drive and the one person it has to convince. That answer becomes the headline.",
-    accent: "#6366f1",
   },
   {
     num: "02",
     title: "Wireframe",
     body: "Structure before style — we map every page so nothing is left to chance.",
-    accent: "#8b5cf6",
   },
   {
     num: "03",
     title: "Design",
     body: "Your brand given form — typography, colour, and space working as one.",
-    accent: "#ec4899",
   },
   {
     num: "04",
     title: "Build",
     body: "Pixel-perfect code — fast, accessible, and built to last beyond the trend cycle.",
-    accent: "#f59e0b",
   },
   {
     num: "05",
     title: "Launch",
     body: "We hand over the keys — and stay close if you need us to drive.",
-    accent: "#10b981",
   },
 ];
 
 export default function WebsiteFactorySection() {
   return (
-    <section
-      id="process"
-      className="px-6 sm:px-12 lg:px-20 py-20 sm:py-28"
-      style={{ background: "#F5F5F1" }}
-    >
+    <section id="process" className="px-6 sm:px-12 lg:px-20 py-24 sm:py-32">
       <div className="max-w-4xl mx-auto">
-
         {/* Heading */}
-        <h2
-          className="text-4xl sm:text-5xl lg:text-[56px] font-bold leading-tight tracking-tight mb-5"
-          style={{ color: "#1a1a1a" }}
+        <p
+          className="text-[11px] tracking-[0.22em] uppercase mb-4"
+          style={{ color: MUTED }}
         >
-          How a 21-day build<br />actually works.
+          Process
+        </p>
+        <h2
+          className="font-serif font-medium leading-[1.08] tracking-tight mb-5"
+          style={{ fontSize: "clamp(38px, 4.5vw, 56px)", color: INK }}
+        >
+          How a 21-day build
+          <br />
+          <em>actually works.</em>
         </h2>
 
         {/* Badge */}
-        <div className="mb-14">
+        <div className="mb-16">
           <span
-            className="inline-block text-sm font-semibold px-4 py-1.5 rounded-full"
-            style={{ background: "#1a1a1a", color: "#ffffff" }}
+            className="inline-block text-[12px] font-medium px-4 py-1.5 rounded-full"
+            style={{ background: INK, color: "#fff" }}
           >
             Brief to live in 21 days — every time
           </span>
         </div>
 
-        {/* Timeline */}
-        <div className="flex flex-col gap-4">
+        {/* Timeline — editorial rows */}
+        <div style={{ borderTop: `1px solid ${BORDER}` }}>
           {steps.map((step) => (
             <div
               key={step.num}
-              className="relative flex gap-5 rounded-2xl px-6 py-6"
-              style={{
-                background: "#ffffff",
-                borderLeft: `4px solid ${step.accent}`,
-                boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
-              }}
+              className="grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_180px_1fr] gap-x-4 sm:gap-x-8 py-8 sm:py-9 items-baseline"
+              style={{ borderBottom: `1px solid ${BORDER}` }}
             >
-              {/* Step number */}
               <span
-                className="shrink-0 text-xs font-mono font-semibold mt-1"
-                style={{ color: step.accent, minWidth: "2rem" }}
+                className="font-serif italic text-[17px]"
+                style={{ color: MUTED }}
               >
                 {step.num}
               </span>
-
-              {/* Content */}
-              <div>
-                <h3
-                  className="text-xl sm:text-2xl font-bold mb-2 leading-snug"
-                  style={{ color: "#1a1a1a" }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{ color: "#5a5a5a" }}
-                >
-                  {step.body}
-                </p>
-              </div>
+              <h3
+                className="font-serif font-medium text-[26px] sm:text-[28px] leading-snug"
+                style={{ color: INK }}
+              >
+                {step.title}
+              </h3>
+              <p
+                className="col-span-2 sm:col-span-1 col-start-2 sm:col-start-3 mt-2 sm:mt-0 text-[15px] leading-relaxed max-w-xl"
+                style={{ color: BODY }}
+              >
+                {step.body}
+              </p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

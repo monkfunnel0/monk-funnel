@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "nes.css/css/nes.min.css";
+import { Geist, Cormorant_Garamond } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+});
 
 export const metadata: Metadata = {
   title: "Monk Funnel — Conversion-First Websites for Startups",
@@ -14,19 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://db.onlinewebfonts.com/c/bb5de19d87c09a95216dc6ccd96e37c6?family=Nimbus+Sans+TW01"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&display=swap"
-        />
-      </head>
+    <html
+      lang="en"
+      className={cn("h-full antialiased font-sans", geist.variable, cormorant.variable)}
+    >
       <body className="min-h-full font-sans">{children}</body>
     </html>
   );

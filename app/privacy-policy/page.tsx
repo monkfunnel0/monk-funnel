@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const SERIF  = "'Cormorant Garamond', Georgia, serif";
+const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
 
 export const metadata = {
@@ -173,7 +173,7 @@ export default function PrivacyPolicyPage() {
 }
 
 function LegalSection({ title, children }: { title: string; children: React.ReactNode }) {
-  const SERIF = "'Cormorant Garamond', Georgia, serif";
+  const SERIF = "var(--font-serif)";
   const BORDER = "#d6cfc6";
 
   return (

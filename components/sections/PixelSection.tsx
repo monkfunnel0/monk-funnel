@@ -1,13 +1,18 @@
+import { ShieldCheck, Crosshair, Clock3 } from "lucide-react";
+
 const pillars = [
   {
+    icon: ShieldCheck,
     bold: "You approve every move.",
     body: "Nothing ships without your sign-off. Full control, zero surprises.",
   },
   {
+    icon: Crosshair,
     bold: "One outcome, not ten.",
     body: "We build around the single action that matters most, and cut everything that competes with it.",
   },
   {
+    icon: Clock3,
     bold: "Shipped in 21 days.",
     body: "A real deadline, not an open-ended Figma file that drags for months.",
   },
@@ -146,21 +151,47 @@ export default function PixelSection() {
       />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-2xl mx-auto pt-20 sm:pt-24">
-        <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-normal text-white leading-tight tracking-tight mb-10">
-          Why founders choose<br />Monk Funnel.
+      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto pt-20 sm:pt-24">
+        <p
+          className="text-[11px] tracking-[0.22em] uppercase mb-4 text-white/80"
+          style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
+        >
+          Why us
+        </p>
+        <h2
+          className="font-serif font-medium text-white leading-[1.08] tracking-tight mb-12"
+          style={{ fontSize: "clamp(38px, 4.5vw, 56px)", textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
+        >
+          Why founders choose
+          <br />
+          <em>Monk Funnel.</em>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 w-full max-w-3xl">
-          {pillars.map((p, i) => (
-            <div
-              key={i}
-              className={`py-6 ${i > 0 ? "sm:border-l sm:border-white/15 sm:pl-6" : ""}`}
-            >
-              <p className="font-semibold text-white mb-1 text-sm">{p.bold}</p>
-              <p className="text-white/70 leading-relaxed text-sm">{p.body}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 w-full max-w-3xl">
+          {pillars.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <div key={i} className="flex flex-col items-center text-center">
+                <Icon
+                  className="w-8 h-8 text-white mb-4"
+                  strokeWidth={1.5}
+                  style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.35))" }}
+                />
+                <p
+                  className="font-semibold text-white mb-2 text-[16px] leading-snug"
+                  style={{ textShadow: "0 1px 10px rgba(0,0,0,0.35)" }}
+                >
+                  {p.bold}
+                </p>
+                <p
+                  className="text-white/80 leading-relaxed text-[13.5px] max-w-[220px]"
+                  style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
+                >
+                  {p.body}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
