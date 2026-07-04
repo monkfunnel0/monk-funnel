@@ -16,7 +16,10 @@ export default function ToolsSection() {
   const track = [...tools, ...tools];
 
   return (
-    <section className="px-6 py-20 sm:py-24">
+    <section
+      className="px-6 py-20 sm:py-24"
+      style={{ borderTop: `1px solid ${BORDER}` }}
+    >
       <div className="max-w-4xl mx-auto text-center">
         <p
           className="text-[11px] tracking-[0.22em] uppercase mb-8"

@@ -33,7 +33,11 @@ const steps = [
 
 export default function WebsiteFactorySection() {
   return (
-    <section id="process" className="px-6 sm:px-12 lg:px-20 py-24 sm:py-32">
+    <section
+      id="process"
+      className="px-6 sm:px-12 lg:px-20 py-24 sm:py-32"
+      style={{ borderTop: `1px solid ${BORDER}` }}
+    >
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <p

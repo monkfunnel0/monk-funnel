@@ -51,7 +51,10 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="px-6 sm:px-12 lg:px-20 py-24 sm:py-32">
+    <section
+      className="px-6 sm:px-12 lg:px-20 py-24 sm:py-32"
+      style={{ borderTop: `1px solid ${BORDER}` }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <p

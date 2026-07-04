@@ -28,6 +28,8 @@ interface NavItemsProps {
     link: string;
   }[];
   className?: string;
+  linkClassName?: string;
+  highlightClassName?: string;
   onItemClick?: () => void;
 }
 
@@ -112,7 +114,13 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({
+  items,
+  className,
+  linkClassName,
+  highlightClassName,
+  onItemClick,
+}: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -127,16 +135,31 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-[#5f5346] hover:text-[#1e180f] transition-colors"
+          className={cn(
+            "relative px-4 py-2 text-[#5f5346] hover:text-[#1e180f] transition-colors duration-300",
+            linkClassName,
+          )}
           key={`link-${idx}`}
           href={item.link}
         >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-[#eae4da]"
-            />
-          )}
+          <AnimatePresence>
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  layout: { type: "spring", stiffness: 400, damping: 35 },
+                  opacity: { duration: 0.18 },
+                }}
+                className={cn(
+                  "absolute inset-0 h-full w-full rounded-full bg-[#eae4da]",
+                  highlightClassName,
+                )}
+              />
+            )}
+          </AnimatePresence>
           <span className="relative z-20">{item.name}</span>
         </a>
       ))}
@@ -218,14 +241,16 @@ export const MobileNavMenu = ({
 export const MobileNavToggle = ({
   isOpen,
   onClick,
+  className,
 }: {
   isOpen: boolean;
   onClick: () => void;
+  className?: string;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className={cn("text-black dark:text-white", className)} onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className={cn("text-black dark:text-white", className)} onClick={onClick} />
   );
 };
 

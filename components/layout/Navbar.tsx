@@ -11,7 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { name: "Services", link: "/#services" },
@@ -19,10 +19,28 @@ const NAV_ITEMS = [
   { name: "Why Us",   link: "/#about"    },
   { name: "Pricing",  link: "/#pricing"  },
   { name: "FAQ",      link: "/#faq"      },
+  { name: "Careers",  link: "/careers"   },
 ];
 
-export default function SiteNavbar() {
+export default function SiteNavbar({
+  heroTheme = "light",
+}: {
+  /** Set to "dark" on pages whose hero sits on a dark background (e.g. a video),
+   *  so nav text renders white until the user scrolls past it. */
+  heroTheme?: "light" | "dark";
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (heroTheme !== "dark") return;
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [heroTheme]);
+
+  const onDarkHero = heroTheme === "dark" && !scrolled;
 
   return (
     <Navbar>
@@ -30,18 +48,25 @@ export default function SiteNavbar() {
       <NavBody>
         <Link
           href="/"
-          className="relative z-20 mr-4 px-2 py-1 font-serif text-[22px] font-semibold text-[#1e180f]"
-          style={{ letterSpacing: "0.01em" }}
+          className="relative z-20 mr-4 px-2 py-1 font-serif text-[22px] font-semibold transition-colors duration-300"
+          style={{ letterSpacing: "0.01em", color: onDarkHero ? "#ffffff" : "#1e180f" }}
         >
           Monk Funnel
         </Link>
 
-        <NavItems items={NAV_ITEMS} />
+        <NavItems
+          items={NAV_ITEMS}
+          linkClassName={
+            onDarkHero ? "text-white/85 hover:text-white" : undefined
+          }
+          highlightClassName={onDarkHero ? "bg-white/15" : undefined}
+        />
 
         <div className="flex items-center gap-2">
           <NavbarButton
             href="mailto:monkfunnel0@gmail.com"
             variant="secondary"
+            className={onDarkHero ? "text-white/85 hover:text-white" : undefined}
           >
             Contact
           </NavbarButton>
@@ -60,13 +85,15 @@ export default function SiteNavbar() {
         <MobileNavHeader>
           <Link
             href="/"
-            className="relative z-20 px-2 py-1 font-serif text-[19px] font-semibold text-[#1e180f]"
+            className="relative z-20 px-2 py-1 font-serif text-[19px] font-semibold transition-colors duration-300"
+            style={{ color: onDarkHero ? "#ffffff" : "#1e180f" }}
           >
             Monk Funnel
           </Link>
           <MobileNavToggle
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={onDarkHero ? "text-white" : undefined}
           />
         </MobileNavHeader>
 
