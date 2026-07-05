@@ -64,7 +64,7 @@ export default function SiteNavbar({
         />
 
         <a
-          href="https://wa.me/918810326598"
+          href="https://wa.me/918679995506"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative z-20 inline-flex items-center gap-2 rounded-full bg-[#1e180f] pl-2 pr-4 py-1.5 text-[13px] font-medium text-white transition-transform hover:-translate-y-0.5"
@@ -109,7 +109,7 @@ export default function SiteNavbar({
           ))}
           <div className="flex w-full flex-col gap-3 pt-2">
             <a
-              href="https://wa.me/918810326598"
+              href="https://wa.me/918679995506"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}

@@ -103,8 +103,8 @@ export default function RefundPage() {
                   monkfunnel0@gmail.com
                 </a>{" "}
                 or call{" "}
-                <a href="tel:+918810326598" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>
-                  +91 88103 26598
+                <a href="tel:+918679995506" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>
+                  +91 86799 95506
                 </a>.
               </p>
             </LegalSection>

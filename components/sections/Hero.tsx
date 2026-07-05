@@ -52,7 +52,9 @@ export default function Hero() {
           style={{ animationDelay: "340ms" }}
         >
           <a
-            href="/contact"
+            href="https://cal.com/ankitmehta/30-minute-discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 rounded-full bg-[#1e180f] pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
@@ -67,7 +69,7 @@ export default function Hero() {
             Book Intro Call
           </a>
           <a
-            href="https://wa.me/918810326598"
+            href="https://wa.me/918679995506"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-[#1e180f] border border-[#e6dfd5]"

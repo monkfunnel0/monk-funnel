@@ -80,7 +80,7 @@ export default function ContactPage() {
 
               <div className="space-y-5">
                 <ContactInfo icon="mail" label="Email" value="monkfunnel0@gmail.com" href="mailto:monkfunnel0@gmail.com" />
-                <ContactInfo icon="phone" label="Phone" value="+91 88103 26598" href="tel:+918810326598" />
+                <ContactInfo icon="phone" label="Phone" value="+91 86799 95506" href="tel:+918679995506" />
                 <ContactInfo icon="pin" label="Based in" value="Delhi, India" href={null} />
               </div>
 
