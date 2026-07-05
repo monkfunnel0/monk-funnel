@@ -5,17 +5,18 @@ import {
   NavBody,
   NavItems,
   MobileNav,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { WhatsAppIcon } from "@/components/icons/BrandIcons";
 
 const NAV_ITEMS = [
   { name: "Services", link: "/#services" },
   { name: "Process",  link: "/#process"  },
+  { name: "Work",     link: "/work"      },
   { name: "Why Us",   link: "/#about"    },
   { name: "Pricing",  link: "/#pricing"  },
   { name: "FAQ",      link: "/#faq"      },
@@ -62,22 +63,17 @@ export default function SiteNavbar({
           highlightClassName={onDarkHero ? "bg-white/15" : undefined}
         />
 
-        <div className="flex items-center gap-2">
-          <NavbarButton
-            href="mailto:monkfunnel0@gmail.com"
-            variant="secondary"
-            className={onDarkHero ? "text-white/85 hover:text-white" : undefined}
-          >
-            Contact
-          </NavbarButton>
-          <NavbarButton
-            href="/contact"
-            as={Link}
-            variant="dark"
-          >
-            Get a teardown
-          </NavbarButton>
-        </div>
+        <a
+          href="https://wa.me/918810326598"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative z-20 inline-flex items-center gap-2 rounded-full bg-[#1e180f] pl-2 pr-4 py-1.5 text-[13px] font-medium text-white transition-transform hover:-translate-y-0.5"
+        >
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center">
+            <WhatsAppIcon className="h-6 w-6" />
+          </span>
+          Message us
+        </a>
       </NavBody>
 
       {/* Mobile */}
@@ -112,15 +108,16 @@ export default function SiteNavbar({
             </a>
           ))}
           <div className="flex w-full flex-col gap-3 pt-2">
-            <NavbarButton
-              href="/contact"
-              as={Link}
-              variant="dark"
-              className="w-full"
+            <a
+              href="https://wa.me/918810326598"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1e180f] px-4 py-2.5 text-[14px] font-medium text-white"
             >
-              Get a free teardown
-            </NavbarButton>
+              <WhatsAppIcon className="h-5 w-5" />
+              Message us
+            </a>
           </div>
         </MobileNavMenu>
       </MobileNav>
