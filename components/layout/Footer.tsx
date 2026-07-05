@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="flex gap-16 sm:gap-20">
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-20">
             {columns.map((col) => (
               <div key={col.title}>
                 <p

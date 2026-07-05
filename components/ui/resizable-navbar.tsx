@@ -53,10 +53,10 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  // Tracks window scroll position. Note: `target: ref` would track scroll
+  // progress through `ref`'s own bounding box — meaningless here since ref
+  // is `position: fixed` and never moves relative to the viewport.
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
