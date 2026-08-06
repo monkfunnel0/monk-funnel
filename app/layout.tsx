@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Monk Funnel — Conversion-First Websites for Startups",
+  title: "Monk Funnel",
   description:
     "We build conversion-focused websites for startups and ship in 21 days — then help you grow with SEO and paid ads when you're ready.",
 };

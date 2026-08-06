@@ -97,18 +97,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Front grass — z-10: in front of card, sandwiches the card bottom */}
-      <div className="pointer-events-none absolute bottom-0 left-0 z-10 w-full select-none">
-        <Image
-          src="https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1781191264/grass_eam204.png"
-          alt=""
-          aria-hidden={true}
-          width={1440}
-          height={300}
-          className="w-full h-auto block"
-          priority
-        />
-      </div>
     </section>
   );
 }
