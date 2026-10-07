@@ -21,6 +21,7 @@ type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<FormState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -28,6 +29,7 @@ export default function ContactPage() {
     company: "",
     service: "",
     message: "",
+    website: "", // honeypot — hidden from real users, bots tend to fill it
   });
 
   function handleChange(
@@ -39,9 +41,24 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
-    // TODO: wire to Google Sheets / API route
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setStatus("success");
+    } catch (err) {
+      setErrorMsg(
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      );
+      setStatus("error");
+    }
   }
 
   const inputClass =
@@ -215,6 +232,31 @@ export default function ContactPage() {
                       style={{ ...inputStyle, resize: "none" }}
                     />
                   </div>
+
+                  {/* Honeypot: off-screen and skipped by keyboard/screen readers */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
+                    <input
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.website}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <p role="alert" className="text-[13px]" style={{ color: "#b3402f" }}>
+                      {errorMsg}{" "}
+                      <a
+                        href="https://wa.me/918679995506"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2"
+                      >
+                        Message us on WhatsApp
+                      </a>
+                    </p>
+                  )}
 
                   <button
                     type="submit"
