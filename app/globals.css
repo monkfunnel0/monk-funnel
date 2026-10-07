@@ -1,11 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-/* nes.css (Mario sprite) ships a Bootstrap-style reboot (a{color:#007bff} etc.).
-   Import it INTO the base layer so Tailwind utilities and our own base rules
-   override it — unlayered it would beat every Tailwind layer. */
-@import "nes.css/css/nes.min.css" layer(base);
-
 @custom-variant dark (&:is(.dark *));
 
 @theme {

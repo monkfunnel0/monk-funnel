@@ -217,7 +217,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -247,66 +246,16 @@ export const MobileNavToggle = ({
   onClick: () => void;
   className?: string;
 }) => {
-  return isOpen ? (
-    <IconX className={cn("text-black dark:text-white", className)} onClick={onClick} />
-  ) : (
-    <IconMenu2 className={cn("text-black dark:text-white", className)} onClick={onClick} />
-  );
-};
-
-export const NavbarLogo = () => {
+  const Icon = isOpen ? IconX : IconMenu2;
   return (
-    <a
-      href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isOpen}
+      className={cn("text-black dark:text-white", className)}
     >
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
-        alt="logo"
-        width={30}
-        height={30}
-      />
-      <span className="font-medium text-black dark:text-white">Startup</span>
-    </a>
-  );
-};
-
-export const NavbarButton = ({
-  href,
-  as: Tag = "a",
-  children,
-  className,
-  variant = "primary",
-  ...props
-}: {
-  href?: string;
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
-  variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
-  const baseStyles =
-    "px-4 py-2 rounded-full text-sm font-medium relative cursor-pointer hover:-translate-y-0.5 active:translate-y-0 transition duration-200 inline-block text-center no-underline hover:no-underline";
-
-  const variantStyles = {
-    primary:
-      "bg-white text-black shadow-[0_0_0_1px_rgba(34,42,53,0.08),_0_1px_4px_rgba(0,0,0,0.06)]",
-    secondary: "bg-transparent text-[#5f5346] hover:text-[#1e180f] shadow-none",
-    dark: "bg-[#1e180f] text-white hover:bg-[#38301f] shadow-[0_1px_4px_rgba(30,24,15,0.25)]",
-    gradient:
-      "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
-  };
-
-  return (
-    <Tag
-      href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
-      {...props}
-    >
-      {children}
-    </Tag>
+      <Icon aria-hidden="true" />
+    </button>
   );
 };

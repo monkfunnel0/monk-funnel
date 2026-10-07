@@ -47,8 +47,59 @@ function pickRandom(arr: string[], exclude?: string): string {
 
 const INTERVAL_MS = 9000;
 
+// Original 16×16 pixel monk (not a third-party character). Each row is a string
+// of palette keys; "." is transparent.
+const SPRITE_PALETTE: Record<string, string> = {
+  o: "#1a1a1a", // outline
+  s: "#f1c9a0", // skin
+  r: "#d9772b", // robe
+  d: "#a85a1c", // robe shade
+  b: "#6b3f1d", // sash / beads
+};
+
+const SPRITE_ROWS = [
+  "................",
+  ".....oooooo.....",
+  "....ossssssso...",
+  "...osssssssso...",
+  "...osoosoossso..",
+  "...ossssssssso..",
+  "....osssooosso..",
+  ".....oosssoo....",
+  "....orrrrrrro...",
+  "...orrrrrrrrro..",
+  "...orrdrrrdrrro.",
+  "...osrrbbbrrso..",
+  "...osrrrrrrrso..",
+  "....orrrddrrro..",
+  "....orrrrrrrro..",
+  "....oooooooooo..",
+];
+
+function MonkSprite() {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      width={64}
+      height={64}
+      shapeRendering="crispEdges"
+      aria-hidden="true"
+      className="npc-sprite"
+    >
+      {SPRITE_ROWS.flatMap((row, y) =>
+        row.split("").map((key, x) =>
+          key === "." ? null : (
+            <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={SPRITE_PALETTE[key]} />
+          ),
+        ),
+      )}
+    </svg>
+  );
+}
+
 export default function FloatingNPC() {
-  const [mounted, setMounted] = useState(false);
+  // Empty until the first message is chosen after mount, so server and client
+  // markup match (the message is random).
   const [message, setMessage] = useState("");
   const [tick, setTick] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -62,13 +113,12 @@ export default function FloatingNPC() {
   }
 
   useEffect(() => {
-    setMounted(true);
-    setMessage(pickRandom(MESSAGES));
+    const first = setTimeout(() => setMessage(pickRandom(MESSAGES)), 0);
     startTimer();
     return () => {
+      clearTimeout(first);
       if (timerRef.current) clearInterval(timerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleClick() {
@@ -77,7 +127,7 @@ export default function FloatingNPC() {
     startTimer(); // reset the 9s countdown on manual click
   }
 
-  if (!mounted) return null;
+  if (!message) return null;
 
   return (
     <>
@@ -156,14 +206,14 @@ export default function FloatingNPC() {
           />
         </div>
 
-        {/* Mario */}
+        {/* Monk mascot */}
         <button
           onClick={handleClick}
-          aria-label="Talk to NPC"
+          aria-label="Show another message"
           title="Click for a new message"
           style={{ background: "none", border: "none", padding: 0 }}
         >
-          <i className="nes-mario npc-mario-sprite" />
+          <MonkSprite />
         </button>
       </div>
     </>

@@ -62,7 +62,6 @@ export default function PixelSection() {
 />
 
       {/* Right top tree — hidden on mobile, extends above section edge */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
    {/* <img
   src="/right-top-decor.webp"
   alt=""

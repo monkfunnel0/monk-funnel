@@ -140,11 +140,11 @@ export default function ContactPage() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="name" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                         Name *
                       </label>
                       <input
-                        name="name"
+                        name="name" id="name"
                         value={form.name}
                         onChange={handleChange}
                         required
@@ -154,11 +154,11 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="email" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                         Email *
                       </label>
                       <input
-                        name="email"
+                        name="email" id="email"
                         type="email"
                         value={form.email}
                         onChange={handleChange}
@@ -172,11 +172,11 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="phone" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                         Phone
                       </label>
                       <input
-                        name="phone"
+                        name="phone" id="phone"
                         type="tel"
                         value={form.phone}
                         onChange={handleChange}
@@ -186,11 +186,11 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="company" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                         Brand / Company
                       </label>
                       <input
-                        name="company"
+                        name="company" id="company"
                         value={form.company}
                         onChange={handleChange}
                         placeholder="Acme Inc."
@@ -201,11 +201,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                    <label htmlFor="service" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                       What are you looking for?
                     </label>
                     <select
-                      name="service"
+                      name="service" id="service"
                       value={form.service}
                       onChange={handleChange}
                       className={inputClass}
@@ -219,11 +219,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                    <label htmlFor="message" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
                       Tell us more
                     </label>
                     <textarea
-                      name="message"
+                      name="message" id="message"
                       value={form.message}
                       onChange={handleChange}
                       rows={5}

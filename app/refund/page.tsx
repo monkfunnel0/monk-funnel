@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -116,7 +117,7 @@ export default function RefundPage() {
           >
             <a href="/privacy-policy" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Privacy Policy</a>
             <a href="/terms" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Terms of Service</a>
-            <a href="/" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Home</a>
+            <Link href="/" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Home</Link>
           </div>
         </div>
       </main>

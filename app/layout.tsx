@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   title: "Monk Funnel",
   description:
     "We build conversion-focused websites for startups and ship in 21 days — then help you grow with SEO and paid ads when you're ready.",
+  openGraph: {
+    title: "Monk Funnel",
+    description:
+      "Conversion-first websites for startups, shipped in 21 days — then SEO and paid ads when you're ready.",
+    siteName: "Monk Funnel",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function RootLayout({
