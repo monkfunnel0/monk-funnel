@@ -6,5 +6,5 @@ export const SITE = {
   phoneDisplay: "+91 86799 95506",
   phoneHref: "tel:+918679995506",
   whatsappUrl: "https://wa.me/918679995506",
-  bookingUrl: "https://cal.com/monk-funnel-r8dkfz/15min",
+  bookingUrl: "https://cal.com/monk-funnel-r8dkfz/30min",
 } as const;
