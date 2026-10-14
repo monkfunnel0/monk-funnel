@@ -1,10 +1,7 @@
 import Image from "next/image";
 import { WhatsAppIcon } from "../icons/BrandIcons";
-
-const INK = "#1e180f";
-const BODY = "#5f5346";
-const MUTED = "#9a8c7e";
-const BORDER = "#e6dfd5";
+import { INK, BODY, MUTED, BORDER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 export default function CTASection() {
   return (
@@ -37,10 +34,10 @@ export default function CTASection() {
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://cal.com/ankitmehta/30-minute-discovery-call"
+            href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-[#1e180f] pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
               <Image
@@ -54,10 +51,10 @@ export default function CTASection() {
             Book Intro Call
           </a>
           <a
-            href="https://wa.me/918679995506"
+            href={SITE.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-[#1e180f] border border-[#e6dfd5]"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center">
               <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]" />

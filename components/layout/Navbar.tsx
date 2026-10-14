@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "@/components/icons/BrandIcons";
+import { INK } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 const NAV_ITEMS = [
   { name: "Services", link: "/#services" },
@@ -50,7 +52,7 @@ export default function SiteNavbar({
         <Link
           href="/"
           className="relative z-20 mr-4 px-2 py-1 font-serif text-[22px] font-semibold transition-colors duration-300"
-          style={{ letterSpacing: "0.01em", color: onDarkHero ? "#ffffff" : "#1e180f" }}
+          style={{ letterSpacing: "0.01em", color: onDarkHero ? "#ffffff" : INK }}
         >
           Monk Funnel
         </Link>
@@ -64,10 +66,10 @@ export default function SiteNavbar({
         />
 
         <a
-          href="https://wa.me/918679995506"
+          href={SITE.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative z-20 inline-flex items-center gap-2 rounded-full bg-[#1e180f] pl-2 pr-4 py-1.5 text-[13px] font-medium text-white transition-transform hover:-translate-y-0.5"
+          className="group relative z-20 inline-flex items-center gap-2 rounded-full bg-ink pl-2 pr-4 py-1.5 text-[13px] font-medium text-white transition-transform hover:-translate-y-0.5"
         >
           <span className="flex h-6 w-6 shrink-0 items-center justify-center">
             <WhatsAppIcon className="h-6 w-6" />
@@ -82,7 +84,7 @@ export default function SiteNavbar({
           <Link
             href="/"
             className="relative z-20 px-2 py-1 font-serif text-[19px] font-semibold transition-colors duration-300"
-            style={{ color: onDarkHero ? "#ffffff" : "#1e180f" }}
+            style={{ color: onDarkHero ? "#ffffff" : INK }}
           >
             Monk Funnel
           </Link>
@@ -109,11 +111,11 @@ export default function SiteNavbar({
           ))}
           <div className="flex w-full flex-col gap-3 pt-2">
             <a
-              href="https://wa.me/918679995506"
+              href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1e180f] px-4 py-2.5 text-[14px] font-medium text-white"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[14px] font-medium text-white"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Message us

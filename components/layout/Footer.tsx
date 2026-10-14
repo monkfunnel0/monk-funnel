@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const INK = "#1e180f";
-const BODY = "#5f5346";
-const MUTED = "#9a8c7e";
-const BORDER = "#e6dfd5";
+import { INK, BODY, MUTED, BORDER, PAPER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 const columns = [
   {
@@ -30,7 +27,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-visible" style={{ background: "#F5F5F1" }}>
+    <footer className="relative overflow-visible" style={{ background: PAPER }}>
       {/* Content */}
       <div
         className="relative z-20 max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-10"
@@ -66,7 +63,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-[14px] text-[#5f5346] hover:text-[#1e180f] transition-colors"
+                        className="text-[14px] text-ink-body hover:text-ink transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -87,18 +84,18 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 <li>
                   <a
-                    href="mailto:monkfunnel0@gmail.com"
-                    className="text-[14px] text-[#5f5346] hover:text-[#1e180f] transition-colors"
+                    href={`mailto:${SITE.email}`}
+                    className="text-[14px] text-ink-body hover:text-ink transition-colors"
                   >
-                    monkfunnel0@gmail.com
+                    {SITE.email}
                   </a>
                 </li>
                 <li>
                   <a
-                    href="tel:+918679995506"
-                    className="text-[14px] text-[#5f5346] hover:text-[#1e180f] transition-colors"
+                    href={SITE.phoneHref}
+                    className="text-[14px] text-ink-body hover:text-ink transition-colors"
                   >
-                    +91 86799 95506
+                    {SITE.phoneDisplay}
                   </a>
                 </li>
               </ul>
@@ -112,11 +109,11 @@ export default function Footer() {
           style={{ borderTop: `1px solid ${BORDER}` }}
         >
           <span className="text-[12px]" style={{ color: MUTED }}>
-            © 2026 Monk Funnel. Delhi, India.
+            © {new Date().getFullYear()} {SITE.name}. Delhi, India.
           </span>
           <Link
             href="/contact"
-            className="text-[12px] text-[#5f5346] hover:text-[#1e180f] underline underline-offset-4 decoration-[#e6dfd5] transition-colors"
+            className="text-[12px] text-ink-body hover:text-ink underline underline-offset-4 decoration-line transition-colors"
           >
             Get in touch →
           </Link>

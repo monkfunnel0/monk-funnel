@@ -6,11 +6,7 @@ import Footer from "@/components/layout/Footer";
 import WorkCard from "@/components/widgets/WorkCard";
 import MobileWorkCard from "@/components/widgets/MobileWorkCard";
 import { workItems, mobileWorkItems, type WorkCategory } from "@/lib/work-items";
-
-const INK = "#1e180f";
-const BODY = "#5f5346";
-const MUTED = "#9a8c7e";
-const BORDER = "#e6dfd5";
+import { INK, BODY, MUTED, BORDER, PAPER } from "@/lib/theme";
 
 const FILTERS: ("All" | WorkCategory)[] = [
   "All",
@@ -32,7 +28,7 @@ export default function WorkPage() {
     <>
       <Navbar />
 
-      <main style={{ background: "#F5F5F1", minHeight: "100vh", paddingTop: "72px" }}>
+      <main style={{ background: PAPER, minHeight: "100vh", paddingTop: "72px" }}>
         <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 py-20 sm:py-28">
           {/* Heading */}
           <div className="text-center mb-12">

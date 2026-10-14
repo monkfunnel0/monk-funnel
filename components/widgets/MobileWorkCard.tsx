@@ -1,8 +1,6 @@
 import Image from "next/image";
 import type { MobileWorkItem } from "@/lib/work-items";
-
-const INK = "#1e180f";
-const BORDER = "#e6dfd5";
+import { INK, BORDER } from "@/lib/theme";
 
 export default function MobileWorkCard({ item }: { item: MobileWorkItem }) {
   return (

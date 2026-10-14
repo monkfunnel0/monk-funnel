@@ -1,6 +1,4 @@
-const MUTED = "#9a8c7e";
-const INK = "#1e180f";
-const BORDER = "#e6dfd5";
+import { INK, MUTED, BORDER } from "@/lib/theme";
 
 const tools = [
   "Next.js",

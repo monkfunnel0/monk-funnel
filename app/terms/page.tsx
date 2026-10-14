@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { INK, MUTED, PAPER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
@@ -14,16 +16,16 @@ export default function TermsPage() {
     <>
       <Navbar />
 
-      <main style={{ background: "#F5F5F1", minHeight: "100vh", paddingTop: "72px" }}>
+      <main style={{ background: PAPER, minHeight: "100vh", paddingTop: "72px" }}>
         <div className="max-w-3xl mx-auto px-6 sm:px-12 py-20 sm:py-28">
-          <p className="text-[11px] tracking-widest uppercase mb-4" style={{ color: "#9a8c7e" }}>Legal</p>
+          <p className="text-[11px] tracking-widest uppercase mb-4" style={{ color: MUTED }}>Legal</p>
           <h1
             className="font-normal leading-tight mb-4"
-            style={{ fontFamily: SERIF, fontSize: "clamp(36px, 5vw, 56px)", color: "#1e180f" }}
+            style={{ fontFamily: SERIF, fontSize: "clamp(36px, 5vw, 56px)", color: INK }}
           >
             Terms of Service
           </h1>
-          <p className="text-[13px] mb-14" style={{ color: "#9a8c7e" }}>
+          <p className="text-[13px] mb-14" style={{ color: MUTED }}>
             Last updated: June 2025 &nbsp;·&nbsp; Monk Funnel, Delhi, India
           </p>
 
@@ -128,8 +130,8 @@ export default function TermsPage() {
             <LegalSection title="Contact">
               <p>
                 For questions about these terms, contact us at{" "}
-                <a href="mailto:monkfunnel0@gmail.com" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>
-                  monkfunnel0@gmail.com
+                <a href={`mailto:${SITE.email}`} className="underline underline-offset-2" style={{ color: MUTED }}>
+                  {SITE.email}
                 </a>.
               </p>
             </LegalSection>
@@ -139,9 +141,9 @@ export default function TermsPage() {
             className="mt-12 flex flex-wrap gap-6 text-[13px]"
             style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 24 }}
           >
-            <a href="/privacy-policy" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Privacy Policy</a>
-            <a href="/refund" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Refund Policy</a>
-            <Link href="/" className="underline underline-offset-2" style={{ color: "#7a6a58" }}>Home</Link>
+            <a href="/privacy-policy" className="underline underline-offset-2" style={{ color: MUTED }}>Privacy Policy</a>
+            <a href="/refund" className="underline underline-offset-2" style={{ color: MUTED }}>Refund Policy</a>
+            <Link href="/" className="underline underline-offset-2" style={{ color: MUTED }}>Home</Link>
           </div>
         </div>
       </main>
@@ -159,13 +161,13 @@ function LegalSection({ title, children }: { title: string; children: React.Reac
     <div style={{ borderBottom: `1px solid ${BORDER}`, paddingTop: 32, paddingBottom: 32 }}>
       <h2
         className="font-normal mb-5"
-        style={{ fontFamily: SERIF, fontSize: 24, color: "#1e180f" }}
+        style={{ fontFamily: SERIF, fontSize: 24, color: INK }}
       >
         {title}
       </h2>
       <div
         className="text-[14px] leading-relaxed space-y-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_strong]:font-semibold"
-        style={{ color: "#7a6a58" }}
+        style={{ color: MUTED }}
       >
         {children}
       </div>

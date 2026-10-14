@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { INK, MUTED, PAPER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
@@ -66,44 +68,44 @@ export default function ContactPage() {
   const inputStyle = {
     borderColor: BORDER,
     background: "#faf9f7",
-    color: "#1e180f",
+    color: INK,
   };
 
   return (
     <>
       <Navbar />
 
-      <main style={{ background: "#F5F5F1", minHeight: "100vh", paddingTop: "72px" }}>
+      <main style={{ background: PAPER, minHeight: "100vh", paddingTop: "72px" }}>
         <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 py-20 sm:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
             {/* Left — info */}
             <div>
-              <p className="text-[11px] tracking-widest uppercase mb-5" style={{ color: "#9a8c7e" }}>
+              <p className="text-[11px] tracking-widest uppercase mb-5" style={{ color: MUTED }}>
                 Get in touch
               </p>
               <h1
                 className="font-normal leading-tight mb-6"
-                style={{ fontFamily: SERIF, fontSize: "clamp(40px, 5vw, 64px)", color: "#1e180f" }}
+                style={{ fontFamily: SERIF, fontSize: "clamp(40px, 5vw, 64px)", color: INK }}
               >
                 Let&apos;s talk<br />about growth.
               </h1>
               <p
                 className="text-[15px] leading-relaxed mb-12"
-                style={{ fontFamily: SERIF, fontStyle: "italic", color: "#7a6a58", maxWidth: 380 }}
+                style={{ fontFamily: SERIF, fontStyle: "italic", color: MUTED, maxWidth: 380 }}
               >
                 Tell us about your brand and what you need. We typically respond within a few hours — often the same day.
               </p>
 
               <div className="space-y-5">
-                <ContactInfo icon="mail" label="Email" value="monkfunnel0@gmail.com" href="mailto:monkfunnel0@gmail.com" />
-                <ContactInfo icon="phone" label="Phone" value="+91 86799 95506" href="tel:+918679995506" />
+                <ContactInfo icon="mail" label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
+                <ContactInfo icon="phone" label="Phone" value={SITE.phoneDisplay} href={SITE.phoneHref} />
                 <ContactInfo icon="pin" label="Based in" value="Delhi, India" href={null} />
               </div>
 
               <div style={{ marginTop: 48, borderTop: `1px solid ${BORDER}`, paddingTop: 24 }}>
-                <p className="text-[12px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>Office hours</p>
-                <p className="text-[14px]" style={{ color: "#7a6a58" }}>Mon – Sat, 10 am – 7 pm IST</p>
+                <p className="text-[12px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>Office hours</p>
+                <p className="text-[14px]" style={{ color: MUTED }}>Mon – Sat, 10 am – 7 pm IST</p>
               </div>
             </div>
 
@@ -124,11 +126,11 @@ export default function ContactPage() {
                   </div>
                   <h2
                     className="font-normal mb-3"
-                    style={{ fontFamily: SERIF, fontSize: 28, color: "#1e180f" }}
+                    style={{ fontFamily: SERIF, fontSize: 28, color: INK }}
                   >
                     Message received.
                   </h2>
-                  <p className="text-[14px]" style={{ color: "#7a6a58" }}>
+                  <p className="text-[14px]" style={{ color: MUTED }}>
                     We&apos;ll be in touch within 24 hours.
                   </p>
                 </div>
@@ -140,7 +142,7 @@ export default function ContactPage() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="name" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="name" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                         Name *
                       </label>
                       <input
@@ -154,7 +156,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="email" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                         Email *
                       </label>
                       <input
@@ -172,7 +174,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="phone" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="phone" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                         Phone
                       </label>
                       <input
@@ -186,7 +188,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                      <label htmlFor="company" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                         Brand / Company
                       </label>
                       <input
@@ -201,7 +203,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                    <label htmlFor="service" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                       What are you looking for?
                     </label>
                     <select
@@ -219,7 +221,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: "#9a8c7e" }}>
+                    <label htmlFor="message" className="block text-[11px] tracking-widest uppercase mb-2" style={{ color: MUTED }}>
                       Tell us more
                     </label>
                     <textarea
@@ -248,7 +250,7 @@ export default function ContactPage() {
                     <p role="alert" className="text-[13px]" style={{ color: "#b3402f" }}>
                       {errorMsg}{" "}
                       <a
-                        href="https://wa.me/918679995506"
+                        href={SITE.whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline underline-offset-2"
@@ -263,7 +265,7 @@ export default function ContactPage() {
                     disabled={status === "submitting"}
                     className="w-full py-3.5 rounded-full text-[14px] font-medium transition-opacity"
                     style={{
-                      background: "#1e180f",
+                      background: INK,
                       color: "#fff",
                       opacity: status === "submitting" ? 0.6 : 1,
                     }}
@@ -273,7 +275,7 @@ export default function ContactPage() {
 
                   <p
                     className="text-center text-[12px]"
-                    style={{ fontFamily: SERIF, fontStyle: "italic", color: "#a09080" }}
+                    style={{ fontFamily: SERIF, fontStyle: "italic", color: MUTED }}
                   >
                     We typically respond within a few hours, never more than 24.
                   </p>
@@ -330,8 +332,8 @@ function ContactInfo({
         {icons[icon]}
       </div>
       <div>
-        <p className="text-[10px] tracking-widest uppercase" style={{ color: "#9a8c7e" }}>{label}</p>
-        <p className="text-[14px] font-medium" style={{ color: "#1e180f" }}>{value}</p>
+        <p className="text-[10px] tracking-widest uppercase" style={{ color: MUTED }}>{label}</p>
+        <p className="text-[14px] font-medium" style={{ color: INK }}>{value}</p>
       </div>
     </div>
   );

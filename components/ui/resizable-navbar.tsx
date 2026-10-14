@@ -10,7 +10,6 @@ import {
 
 import React, { useRef, useState } from "react";
 
-
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
@@ -136,7 +135,7 @@ export const NavItems = ({
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className={cn(
-            "relative px-4 py-2 text-[#5f5346] hover:text-[#1e180f] transition-colors duration-300",
+            "relative px-4 py-2 text-ink-body hover:text-ink transition-colors duration-300",
             linkClassName,
           )}
           key={`link-${idx}`}

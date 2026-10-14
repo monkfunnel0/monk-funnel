@@ -8,6 +8,17 @@
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
 }
 
+/* Brand palette. `static` keeps the variables emitted even when only inline
+   styles use them (via lib/theme.ts). Muted is #7a6a58 for WCAG AA contrast
+   (4.77:1 on paper); the old #9a8c7e was 2.99:1. */
+@theme static {
+  --color-ink: #1e180f;
+  --color-ink-body: #5f5346;
+  --color-ink-muted: #7a6a58;
+  --color-line: #e6dfd5;
+  --color-paper: #F5F5F1;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,7 +31,6 @@ html {
     scroll-behavior: auto;
   }
 }
-
 
 body {
   background-color: #F5F5F1;

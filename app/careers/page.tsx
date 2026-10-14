@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-
-const INK = "#1e180f";
-const BODY = "#5f5346";
-const MUTED = "#9a8c7e";
-const BORDER = "#e6dfd5";
+import { INK, BODY, MUTED, BORDER, PAPER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Careers — Monk Funnel",
@@ -25,7 +22,7 @@ const role = {
     "Own small features end-to-end from week one",
   ],
   mailto:
-    "mailto:monkfunnel0@gmail.com?subject=Application%3A%20Web%20Design%20%26%20Development%20Intern",
+    `mailto:${SITE.email}?subject=Application%3A%20Web%20Design%20%26%20Development%20Intern`,
 };
 
 export default function CareersPage() {
@@ -33,7 +30,7 @@ export default function CareersPage() {
     <>
       <Navbar heroTheme="dark" />
 
-      <main style={{ background: "#F5F5F1" }}>
+      <main style={{ background: PAPER }}>
         {/* Cinematic video hero */}
         <section className="relative flex min-h-[92svh] flex-col items-center justify-center overflow-hidden rounded-b-[56px] px-6 text-center shadow-[0_24px_60px_rgba(30,24,15,0.18)]">
           <video
@@ -171,11 +168,11 @@ export default function CareersPage() {
           >
             Nothing that fits? Write to us anyway —{" "}
             <a
-              href="mailto:monkfunnel0@gmail.com"
+              href={`mailto:${SITE.email}`}
               className="underline underline-offset-2 not-italic"
               style={{ color: BODY, fontFamily: "var(--font-sans)" }}
             >
-              monkfunnel0@gmail.com
+              {SITE.email}
             </a>
           </p>
         </div>

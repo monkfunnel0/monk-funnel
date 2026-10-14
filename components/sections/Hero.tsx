@@ -4,6 +4,7 @@ import Image from "next/image";
 import { WhatsAppIcon } from "../icons/BrandIcons";
 import ScaledDashboard from "../widgets/ScaledDashboard";
 import DashboardMockup from "../widgets/DashboardMockup";
+import { SITE } from "@/lib/site";
 
 const BG_URL =
   "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85";
@@ -27,7 +28,7 @@ export default function Hero() {
         </div> */}
 
         {/* Headline */}
-        <h1 className="font-serif font-medium text-[#1e180f] leading-[1.02] tracking-tight text-[44px] min-[400px]:text-[50px] sm:text-[68px] lg:text-[80px] xl:text-[92px]">
+        <h1 className="font-serif font-medium text-ink leading-[1.02] tracking-tight text-[44px] min-[400px]:text-[50px] sm:text-[68px] lg:text-[80px] xl:text-[92px]">
           <span className="block animate-fade-up">Your website should be</span>
           <span
             className="block animate-fade-up"
@@ -52,10 +53,10 @@ export default function Hero() {
           style={{ animationDelay: "340ms" }}
         >
           <a
-            href="https://cal.com/ankitmehta/30-minute-discovery-call"
+            href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-[#1e180f] pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
               <Image
@@ -69,10 +70,10 @@ export default function Hero() {
             Book Intro Call
           </a>
           <a
-            href="https://wa.me/918679995506"
+            href={SITE.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-[#1e180f] border border-[#e6dfd5]"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center">
               <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]" />

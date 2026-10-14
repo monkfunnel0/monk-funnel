@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { INK, BODY, MUTED, PAPER } from "@/lib/theme";
+import { SITE } from "@/lib/site";
 
 const SERIF  = "var(--font-serif)";
 const BORDER = "#d6cfc6";
@@ -20,7 +22,7 @@ const faqs = [
   },
   {
     q: "What does your pricing look like?",
-    a: "Projects are scoped and quoted fixed-price so you never get a surprise invoice. Ongoing retainers for ads and SEO are month-to-month — no 12-month lock-ins. Book a free audit call and we'll give you exact numbers.",
+    a: "The ranges on this page are typical, not fixed — every business has different problems, so every project is scoped individually. After a free discovery call you get a fixed written quote, so there's never a surprise invoice. Ongoing retainers for ads and SEO are month-to-month with no 12-month lock-ins, and ad spend is billed separately.",
   },
   {
     q: "Can I see results before signing a long-term contract?",
@@ -43,14 +45,14 @@ export default function FAQSection() {
     <section
       id="faq"
       className="px-6 sm:px-12 lg:px-20 py-20 sm:py-28"
-      style={{ background: "#F5F5F1", borderTop: "1px solid #e6dfd5" }}
+      style={{ background: PAPER, borderTop: "1px solid var(--color-line)" }}
     >
       <div className="max-w-3xl mx-auto">
 
         {/* Heading */}
         <p
           className="text-center text-[11px] tracking-[0.22em] uppercase mb-4"
-          style={{ color: "#9a8c7e" }}
+          style={{ color: MUTED }}
         >
           FAQ
         </p>
@@ -58,7 +60,7 @@ export default function FAQSection() {
           className="text-center font-serif font-medium leading-[1.08] tracking-tight mb-16"
           style={{
             fontSize: "clamp(38px, 4.5vw, 56px)",
-            color: "#1e180f",
+            color: INK,
           }}
         >
           Frequently asked <em>questions</em>
@@ -78,7 +80,7 @@ export default function FAQSection() {
                 >
                   <span
                     className="text-[15px] sm:text-[16px] font-medium leading-snug"
-                    style={{ color: "#1e180f" }}
+                    style={{ color: INK }}
                   >
                     {faq.q}
                   </span>
@@ -88,7 +90,7 @@ export default function FAQSection() {
                     className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center"
                     style={{
                       border: `1px solid ${BORDER}`,
-                      color: "#7a6a58",
+                      color: MUTED,
                       transition: "border-color 0.2s",
                     }}
                     aria-hidden="true"
@@ -116,7 +118,7 @@ export default function FAQSection() {
                   <div style={{ overflow: "hidden" }}>
                     <p
                       className="pb-6 text-[14px] leading-relaxed max-w-xl"
-                      style={{ color: "#5f5346" }}
+                      style={{ color: BODY }}
                     >
                       {faq.a}
                     </p>
@@ -130,13 +132,13 @@ export default function FAQSection() {
         {/* Bottom footnote */}
         <p
           className="mt-12 text-center text-[13px]"
-          style={{ fontFamily: SERIF, fontStyle: "italic", color: "#a09080" }}
+          style={{ fontFamily: SERIF, fontStyle: "italic", color: MUTED }}
         >
           Still have questions?{" "}
           <a
-            href="mailto:monkfunnel0@gmail.com"
+            href={`mailto:${SITE.email}`}
             className="underline underline-offset-2"
-            style={{ color: "#7a6a58" }}
+            style={{ color: MUTED }}
           >
             Drop us a line.
           </a>

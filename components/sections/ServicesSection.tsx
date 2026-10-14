@@ -1,9 +1,5 @@
 import { TrendingUp, Target, Search, Layers, Monitor } from "lucide-react";
-
-const INK = "#1e180f";
-const BODY = "#5f5346";
-const MUTED = "#9a8c7e";
-const BORDER = "#e6dfd5";
+import { INK, BODY, MUTED, BORDER } from "@/lib/theme";
 
 const growthServices = [
   {
