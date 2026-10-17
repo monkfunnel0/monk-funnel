@@ -220,6 +220,13 @@ body {
   html {
     @apply font-sans;
   }
+  /* No single-word last lines on narrow screens */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
   /* Reset browser-default blue/underline on anchors. In @layer base so
      Tailwind utilities (@layer utilities) can override per-element. */
   a, a:hover, a:visited {

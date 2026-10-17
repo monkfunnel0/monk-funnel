@@ -141,12 +141,12 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-md mx-auto lg:max-w-none">
+        {/* Cards — swipeable row on phones (next card peeks in), stacked on tablets, 3-up on desktop */}
+        <div className="-mx-6 px-6 flex gap-4 overflow-x-auto snap-x snap-mandatory pt-2 pb-4 [scrollbar-width:none] sm:mx-auto sm:px-0 sm:pt-0 sm:pb-0 sm:overflow-visible sm:grid sm:grid-cols-1 lg:grid-cols-3 sm:gap-5 sm:max-w-md lg:max-w-none">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="rounded-2xl overflow-hidden flex flex-col"
+              className="shrink-0 w-[85%] snap-center sm:w-auto rounded-2xl overflow-hidden flex flex-col"
               style={{
                 border: plan.highlighted
                   ? "1.5px solid #b8aa98"
@@ -204,10 +204,7 @@ export default function PricingSection() {
 
               {/* Image */}
               <div
-  className="overflow-hidden mx-4 mt-4 rounded-xl"
-  style={{
-    aspectRatio: "4/3",
-  }}
+  className="overflow-hidden mx-4 mt-1 sm:mt-4 rounded-xl aspect-[16/7] sm:aspect-4/3"
 >
   <img
     src={plan.img}

@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WebsiteFactorySection from "@/components/sections/WebsiteFactorySection";
+import ConfidentialSection from "@/components/sections/ConfidentialSection";
 import PixelSection from "@/components/sections/PixelSection";
 import PricingSection from "@/components/sections/PricingSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <ServicesSection />
       <WebsiteFactorySection />
+      <ConfidentialSection />
       <PixelSection />
       <PricingSection />
       <TestimonialsSection />

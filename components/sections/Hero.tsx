@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { WhatsAppIcon } from "../icons/BrandIcons";
-import ScaledDashboard from "../widgets/ScaledDashboard";
-import DashboardMockup from "../widgets/DashboardMockup";
+import BeforeAfterMockup from "../widgets/BeforeAfterMockup";
 import { SITE } from "@/lib/site";
 
 const BG_URL =
@@ -49,14 +48,14 @@ export default function Hero() {
 
         {/* CTA buttons */}
         <div
-          className="animate-fade-up mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-3"
+          className="animate-fade-up mt-7 sm:mt-8 flex flex-col sm:flex-row w-full max-w-xs sm:w-auto sm:max-w-none items-stretch sm:items-center justify-center gap-3"
           style={{ animationDelay: "340ms" }}
         >
           <a
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
+            className="group inline-flex items-center justify-center sm:justify-start gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
               <Image
@@ -73,7 +72,7 @@ export default function Hero() {
             href={SITE.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
+            className="group inline-flex items-center justify-center sm:justify-start gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center">
               <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]" />
@@ -86,15 +85,13 @@ export default function Hero() {
       {/* Spacer: content → dashboard */}
       <div className="flex-1 min-h-10 sm:min-h-12 lg:min-h-16 shrink-0" />
 
-      {/* Dashboard mockup — z-[5]: above back grass (bg image), below front grass strip */}
+      {/* Before/after mockup — z-[5]: above back grass (bg image), below front grass strip */}
       <div
-        className="animate-hero-rise relative z-[5] w-[92%] sm:w-[84%] lg:w-[72%] max-w-4xl mx-auto shrink-0 -mb-10 sm:-mb-20 lg:-mb-32"
+        className="animate-hero-rise relative z-[5] w-[92%] sm:w-[84%] lg:w-[72%] max-w-4xl mx-auto shrink-0 -mb-2 sm:-mb-20 lg:-mb-32"
         style={{ animationDelay: "500ms" }}
       >
         <div className="rounded-t-2xl overflow-hidden bg-[#1a1a1c] shadow-[0_-20px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/10 text-left">
-          <ScaledDashboard>
-            <DashboardMockup />
-          </ScaledDashboard>
+          <BeforeAfterMockup />
         </div>
       </div>
 

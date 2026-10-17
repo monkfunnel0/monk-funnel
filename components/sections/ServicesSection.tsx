@@ -88,27 +88,28 @@ export default function ServicesSection() {
       >
         When you&apos;re ready to scale traffic
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 max-sm:rounded-3xl max-sm:bg-white max-sm:border max-sm:border-line max-sm:divide-y max-sm:divide-line">
         {growthServices.map((s) => {
           const Icon = s.icon;
           return (
             <div
               key={s.title}
-              className="group bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
-              style={{ border: `1px solid ${BORDER}` }}
+              className="group flex gap-4 px-5 py-4 sm:block sm:bg-white sm:rounded-2xl sm:p-6 sm:border sm:border-line sm:transition-all sm:duration-300 sm:hover:-translate-y-1"
             >
               <div
-                className="w-9 h-9 rounded-full flex items-center justify-center mb-4 transition-colors"
+                className="mt-0.5 sm:mt-0 w-9 h-9 shrink-0 rounded-full flex items-center justify-center sm:mb-4 transition-colors"
                 style={{ border: `1px solid ${BORDER}`, background: "#faf8f4" }}
               >
                 <Icon className="w-4 h-4" style={{ color: BODY }} />
               </div>
-              <h3 className="text-[15px] font-medium mb-1.5" style={{ color: INK }}>
-                {s.title}
-              </h3>
-              <p className="text-[13px] leading-relaxed" style={{ color: BODY }}>
-                {s.desc}
-              </p>
+              <div>
+                <h3 className="text-[15px] font-medium mb-1" style={{ color: INK }}>
+                  {s.title}
+                </h3>
+                <p className="text-[13.5px] sm:text-[13px] leading-relaxed" style={{ color: BODY }}>
+                  {s.desc}
+                </p>
+              </div>
             </div>
           );
         })}

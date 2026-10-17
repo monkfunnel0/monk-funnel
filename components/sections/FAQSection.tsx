@@ -33,6 +33,10 @@ const faqs = [
     a: "You do — entirely. All code, design files, ad accounts, and content belong to you from day one. We don't hold your assets hostage, ever.",
   },
   {
+    q: "Can I see your client work?",
+    a: "Most of our client work is under NDA, so we don't publish client names, screenshots or numbers — and we'll protect your project the same way. Our Work page shows studio concepts so you can judge our design range, and on a discovery call we'll walk you through exactly how we'd approach your site.",
+  },
+  {
     q: "What makes Monk Funnel different from other agencies?",
     a: "We treat your website as a salesperson, not a brochure. Most agencies design something that looks good and hope it works. We build around the one decision your visitor needs to make — and we ship it in 21 days instead of dragging it out for months.",
   },

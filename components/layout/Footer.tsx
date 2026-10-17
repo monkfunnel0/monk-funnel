@@ -30,7 +30,7 @@ export default function Footer() {
     <footer className="relative overflow-visible" style={{ background: PAPER }}>
       {/* Content */}
       <div
-        className="relative z-20 max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-10"
+        className="relative z-20 max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-24 sm:pb-10"
         style={{ borderTop: `1px solid ${BORDER}` }}
       >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-10 sm:gap-6">
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          <div className="flex flex-col gap-10 sm:flex-row sm:gap-20">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:flex sm:flex-row sm:gap-20">
             {columns.map((col) => (
               <div key={col.title}>
                 <p
@@ -74,7 +74,7 @@ export default function Footer() {
             ))}
 
             {/* Contact */}
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <p
                 className="text-[11px] tracking-[0.22em] uppercase mb-4"
                 style={{ color: MUTED }}
@@ -103,11 +103,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider + copyright */}
-        <div
-          className="mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2"
-          style={{ borderTop: `1px solid ${BORDER}` }}
-        >
+        {/* Divider + copyright — no divider on phones, where it cuts across the pixel tree */}
+        <div className="mt-10 sm:mt-14 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 sm:border-t sm:border-line">
           <span className="text-[12px]" style={{ color: MUTED }}>
             © {new Date().getFullYear()} {SITE.name}. Delhi, India.
           </span>
@@ -134,7 +131,7 @@ export default function Footer() {
             bottom-0
             left-0
             z-10
-            h-[28vh]
+            h-[16vh]
             sm:h-[38vh]
             lg:h-[55vh]
             xl:h-[65vh]

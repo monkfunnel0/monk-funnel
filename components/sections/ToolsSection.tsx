@@ -25,9 +25,31 @@ export default function ToolsSection() {
         >
           Tools we&apos;ve mastered
         </p>
+        {/* From sm up the strip is decorative (it repeats items for the loop), so screen
+            readers get this clean list instead. On phones the chips below serve both. */}
+        <ul className="hidden sm:block sr-only">
+          {tools.map((tool) => (
+            <li key={tool}>{tool}</li>
+          ))}
+        </ul>
 
+        {/* Phones: every tool visible at once as chips */}
+        <ul className="sm:hidden flex flex-wrap justify-center gap-2.5">
+          {tools.map((tool) => (
+            <li
+              key={tool}
+              className="rounded-full bg-white px-4 py-2 text-[13px] font-medium"
+              style={{ color: INK, border: `1px solid ${BORDER}`, boxShadow: "0 2px 10px rgba(90,70,40,0.04)" }}
+            >
+              {tool}
+            </li>
+          ))}
+        </ul>
+
+        {/* Tablet & desktop: scrolling strip */}
         <div
-          className="relative overflow-hidden rounded-full bg-white mx-auto"
+          className="hidden sm:block relative overflow-hidden rounded-full bg-white mx-auto"
+          aria-hidden="true"
           style={{ border: `1px solid ${BORDER}`, boxShadow: "0 2px 16px rgba(90,70,40,0.05)" }}
         >
           {/* Fade edges */}

@@ -1,20 +1,38 @@
-import { ShieldCheck, Crosshair, Clock3 } from "lucide-react";
+import { MessagesSquare, CalendarCheck, ReceiptText, Target, KeyRound, Unlock } from "lucide-react";
+import { INK, BODY, BORDER } from "@/lib/theme";
 
+// Each point is a concrete difference from the usual agency experience. Every claim
+// is one the site already makes elsewhere (hero, pricing, FAQ).
 const pillars = [
   {
-    icon: ShieldCheck,
-    bold: "You approve every move.",
-    body: "Nothing ships without your sign-off. Full control, zero surprises.",
+    icon: MessagesSquare,
+    bold: "Founders on every call.",
+    body: "No account manager passing messages along. You talk to the people designing and building your site.",
   },
   {
-    icon: Crosshair,
-    bold: "One outcome, not ten.",
-    body: "We build around the single action that matters most, and cut everything that competes with it.",
+    icon: CalendarCheck,
+    bold: "Live in 21 days.",
+    body: "The date is agreed before we start — not a three-month project that keeps slipping.",
   },
   {
-    icon: Clock3,
-    bold: "Shipped in 21 days.",
-    body: "A real deadline, not an open-ended Figma file that drags for months.",
+    icon: ReceiptText,
+    bold: "One fixed quote.",
+    body: "Scoped on a free call and put in writing. No hourly billing, no surprise change requests.",
+  },
+  {
+    icon: Target,
+    bold: "Built to get enquiries.",
+    body: "Every page is designed around the action you want visitors to take, not how it looks in a portfolio.",
+  },
+  {
+    icon: KeyRound,
+    bold: "Yours from day one.",
+    body: "Code, domain and design files are handed over. Nothing held back, nothing held hostage.",
+  },
+  {
+    icon: Unlock,
+    bold: "No lock-ins.",
+    body: "Growth retainers run month-to-month. You stay because it's working, not because a contract says so.",
   },
 ];
 
@@ -150,7 +168,7 @@ export default function PixelSection() {
       />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto pt-20 sm:pt-24">
+      <div className="relative z-20 flex flex-col items-center text-center w-full max-w-4xl mx-auto pt-20 sm:pt-24 pb-24 sm:pb-36">
         <p
           className="text-[11px] tracking-[0.22em] uppercase mb-4 text-white/80"
           style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
@@ -158,7 +176,7 @@ export default function PixelSection() {
           Why us
         </p>
         <h2
-          className="font-serif font-medium text-white leading-[1.08] tracking-tight mb-12"
+          className="font-serif font-medium text-white leading-[1.08] tracking-tight mb-14"
           style={{ fontSize: "clamp(38px, 4.5vw, 56px)", textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
         >
           Why founders choose
@@ -166,11 +184,40 @@ export default function PixelSection() {
           <em>Monk Funnel.</em>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 w-full max-w-3xl">
-          {pillars.map((p, i) => {
+        {/* Phone: one compact card, readable over the pixel trees */}
+        <ul
+          className="sm:hidden w-full max-w-md rounded-3xl bg-white text-left divide-y divide-line"
+          style={{ boxShadow: "0 16px 48px rgba(15,40,80,0.25)" }}
+        >
+          {pillars.map((p) => {
             const Icon = p.icon;
             return (
-              <div key={i} className="flex flex-col items-center text-center">
+              <li key={p.bold} className="flex gap-4 px-5 py-4">
+                <span
+                  className="mt-0.5 w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                  style={{ border: `1px solid ${BORDER}`, background: "#faf8f4" }}
+                >
+                  <Icon className="w-4 h-4" style={{ color: BODY }} />
+                </span>
+                <div>
+                  <p className="text-[15px] font-medium leading-snug" style={{ color: INK }}>
+                    {p.bold}
+                  </p>
+                  <p className="mt-1 text-[13.5px] leading-relaxed" style={{ color: BODY }}>
+                    {p.body}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Tablet & desktop: airy icons on the sky */}
+        <div className="hidden sm:grid grid-cols-3 gap-x-8 gap-y-12 w-full max-w-3xl">
+          {pillars.map((p) => {
+            const Icon = p.icon;
+            return (
+              <div key={p.bold} className="flex flex-col items-center text-center">
                 <Icon
                   className="w-8 h-8 text-white mb-4"
                   strokeWidth={1.5}
@@ -183,8 +230,8 @@ export default function PixelSection() {
                   {p.bold}
                 </p>
                 <p
-                  className="text-white/80 leading-relaxed text-[13.5px] max-w-[220px]"
-                  style={{ textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}
+                  className="text-white/90 leading-relaxed text-[14px] max-w-60"
+                  style={{ textShadow: "0 1px 8px rgba(0,0,0,0.35)" }}
                 >
                   {p.body}
                 </p>

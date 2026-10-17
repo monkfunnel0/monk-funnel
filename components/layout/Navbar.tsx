@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CalendarDays } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/BrandIcons";
 import { INK } from "@/lib/theme";
 import { SITE } from "@/lib/site";
@@ -111,11 +112,21 @@ export default function SiteNavbar({
           ))}
           <div className="flex w-full flex-col gap-3 pt-2">
             <a
-              href={SITE.whatsappUrl}
+              href={SITE.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[14px] font-medium text-white"
+            >
+              <CalendarDays className="h-4 w-4" />
+              Book intro call
+            </a>
+            <a
+              href={SITE.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[14px] font-medium text-ink border border-line"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Message us

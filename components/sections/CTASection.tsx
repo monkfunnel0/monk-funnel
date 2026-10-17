@@ -32,12 +32,12 @@ export default function CTASection() {
           costing you signups right now — and what we&apos;d change first.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-col sm:flex-row w-full max-w-xs sm:w-auto sm:max-w-none items-stretch sm:items-center justify-center gap-3">
           <a
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
+            className="group inline-flex items-center justify-center sm:justify-start gap-2.5 rounded-full bg-ink pl-2 pr-6 py-2 text-[14px] font-medium text-white shadow-[0_2px_12px_rgba(30,24,15,0.28)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
               <Image
@@ -54,7 +54,7 @@ export default function CTASection() {
             href={SITE.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
+            className="group inline-flex items-center justify-center sm:justify-start gap-2.5 rounded-full bg-white pl-2 pr-6 py-2 text-[14px] font-medium text-ink border border-line"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center">
               <WhatsAppIcon className="h-8 w-8 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[8deg]" />

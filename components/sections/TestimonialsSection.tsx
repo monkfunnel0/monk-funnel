@@ -102,13 +102,13 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="-mx-6 px-6 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] sm:mx-0 sm:px-0 sm:pb-0 sm:overflow-visible sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
           {reviews.map((r) => {
             const dark = !!r.dark;
             return (
               <div
                 key={r.name}
-                className="flex flex-col rounded-[28px] p-2.5 transition-transform duration-300 hover:-translate-y-1"
+                className="flex flex-col shrink-0 w-[85%] snap-center sm:w-auto rounded-[28px] p-2.5 transition-transform duration-300 sm:hover:-translate-y-1"
                 style={{
                   background: dark ? INK : "#ffffff",
                   border: `1px solid ${dark ? "#38301f" : BORDER}`,

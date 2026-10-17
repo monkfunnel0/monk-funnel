@@ -152,7 +152,7 @@ export default function FloatingNPC() {
         }
       `}</style>
 
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-end gap-2 sm:gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 hidden sm:flex items-end gap-2 sm:gap-3">
 
         {/* Dialog box */}
         <div

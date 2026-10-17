@@ -36,20 +36,22 @@ export default function WorkPage() {
               className="text-[11px] tracking-[0.22em] uppercase mb-4"
               style={{ color: MUTED }}
             >
-              Recent work
+              Studio concepts
             </p>
             <h1
               className="font-serif font-medium leading-[1.08] tracking-tight mb-4"
               style={{ fontSize: "clamp(38px, 4.5vw, 56px)", color: INK }}
             >
-              A raw look at <em>recent work.</em>
+              A look at our <em>design range.</em>
             </h1>
             <p
               className="text-[15px] leading-relaxed max-w-md mx-auto"
               style={{ color: BODY }}
             >
-              Ecommerce, education, travel, events, finance, and local
-              business — every project we&apos;ve shipped.
+              Client work stays private under NDA. These are design
+              explorations from our studio across ecommerce, education,
+              travel, events, finance and local business — the same craft,
+              without anyone&apos;s data.
             </p>
           </div>
 
